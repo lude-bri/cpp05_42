@@ -24,7 +24,7 @@ int	main (void)
 	{
 		try
 		{
-			Bureaucrat b("bob", 150);
+			Bureaucrat b("Paul", 150);
 			std::cout << b << std::endl;
 		}
 		catch (std::exception &e)
@@ -32,5 +32,52 @@ int	main (void)
 			std::cout << e.what() << std::endl;
 		}
 	}
+	printTestHeader("Test 01. Increment Grade");
+	{
+		try {
+			
+			Bureaucrat b("John", 3);
+
+			b.incrementGrade();
+			std::cout << b << std::endl;
+		}
+		catch (std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
+	printTestHeader("Test 02. Decrement Grade");
+	{
+		try {
+			
+			Bureaucrat b("Ringo", 3);
+
+			b.decrementGrade();
+			std::cout << b << std::endl;
+		}
+		catch (std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
+	printTestHeader("Test 03. Out of Bounds");
+	{
+		try {
+
+			Bureaucrat b("George", 150);
+
+			for (int i = 0; i < 150; i++)
+					b.incrementGrade();
+			b.incrementGrade(); // grade = 0;
+			std::cout << b.getGrade() << std::endl;
+
+			//trying to increment again
+			b.incrementGrade();
+			std::cout << b.getGrade() << std::endl;
+
+		}
+		catch (std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
 	return 0;
+
 }

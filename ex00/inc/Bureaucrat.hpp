@@ -57,12 +57,12 @@ public:
 	int			getGrade() const;
 
 	//exceptions
-	void			GradeTooHighException() const;
-	void			GradeTooLowException() const;
+	void		GradeTooHighException() const;
+	void		GradeTooLowException() const;
 
 	//grades control
-	void	plusGrade();
-	void	minusGrade();
+	void		incrementGrade();
+	void		decrementGrade();
 };
 
 //overload

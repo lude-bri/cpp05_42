@@ -39,7 +39,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy) {
 
 //Copy operator << assignment
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b) {
-	out << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
+	out << b.getName() << ", bureaucrat grade " << b.getGrade() << std::endl;
 	return out;
 }
 
@@ -80,6 +80,16 @@ void		Bureaucrat::GradeTooHighException() const {
 }
 
 //grades control
+void	Bureaucrat::incrementGrade() {
+	if (_grade <= 0)
+		std::cout << "Ok! Enough is enough. No can't do" << std::endl;
+	else
+		--_grade;
+}
 
-void	Bureaucrat::plusGrade() {_grade++;}
-void	Bureaucrat::minusGrade() {_grade--;}
+void	Bureaucrat::decrementGrade() {
+	if (_grade >= 150)
+		std::cout << "Damn... You're fired! OUT!" << std::endl;
+	else
+		++_grade;
+}
