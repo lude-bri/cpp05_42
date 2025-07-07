@@ -24,5 +24,26 @@ int main (void)
 	printTestHeader("Test 00. Building");
 	{
 		Form f("Aspadex Form");
+
+		std::cout << f.getName() << " has the following state: " << f.getFormState()
+		<< std::endl;
+	}
+	printTestHeader("Test 01. Form State");
+	{
+		Form	f("Ajax Contract");
+
+		std::cout << f << std::endl;
+	}
+	printTestHeader("Test 02. Signing Forms");
+	{
+		Form		f("Top Secret");
+		Bureaucrat	b("Fred", 60);
+		Bureaucrat	d("Salsicha", 75);
+
+		std::cout << f << std::endl;
+		b.signForm(f);
+		d.signForm(f);
+		std::cout << f << std::endl;
+
 	}
 }
