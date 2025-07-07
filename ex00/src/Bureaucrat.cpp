@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 12:10:49 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/07 12:45:27 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/07 12:46:24 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name) {
 	}
 }
 
-
+//Copy Constructor
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) {
+	
+}
 
 
 
