@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 12:08:08 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/07 13:31:33 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/07 18:17:33 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 //LIBRARIES
 #include <iostream>
+class Form;
 
 //DEBUG
 #ifdef DEBUG
@@ -33,6 +34,7 @@
 # define BOLD    "\033[1m"
 # define BLINK    "\033[5m" 
 # define REVERSE  "\033[7m"
+
 
 //CLASSES
 class Bureaucrat {
@@ -63,6 +65,9 @@ public:
 	//grades control
 	void		incrementGrade();
 	void		decrementGrade();
+
+	//Sign Form
+	void		signForm(Form &f);
 };
 
 //overload

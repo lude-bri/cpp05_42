@@ -6,11 +6,12 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 12:10:49 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/07 13:36:01 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/07 18:18:49 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
+#include "../inc/Form.hpp"
 
 //Default constructor
 Bureaucrat::Bureaucrat() {
@@ -92,4 +93,9 @@ void	Bureaucrat::decrementGrade() {
 		GradeTooLowException();
 	else
 		++_grade;
+}
+
+//Sign Form
+void	Bureaucrat::signForm(Form &f) {
+	f.beSigned(*this);
 }

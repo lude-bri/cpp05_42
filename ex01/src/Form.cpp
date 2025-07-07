@@ -6,19 +6,19 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 17:04:31 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/07 17:54:12 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/07 18:24:51 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Form.hpp"
 
 //Default Constructor
-Form::Form() : _isSigned(false) {
+Form::Form() : _isSigned(false), _gradeToSign(75), _gradeToExecute(120) {
 	DEBUG_MSG("A Default Form was build\n");
 }
 
 //Parametric Constructor
-Form::Form(std::string &name) : _name(name), _isSigned(false) {
+Form::Form(const std::string &name) : _name(name), _isSigned(false), _gradeToSign(75), _gradeToExecute(120) {
 	DEBUG_MSG("A Form was build\n");
 }
 
@@ -71,8 +71,13 @@ void	Form::GradeTooHighException() const {
 }
 
 //Sign
-void	Form::beSigned(const Bureaucrat &b) {
-
-
+void	Form::beSigned(Bureaucrat &b) {
+	if (b.getGrade() >= 75) {
+		std::cout << b.getName() << " signed " << _name << std::endl;
+		_isSigned = true;
+	}
+	else
+		std::cout << b.getName() << " couldn't sign " << _name
+		<< " because grade is too low" << std::endl;
 }
 
