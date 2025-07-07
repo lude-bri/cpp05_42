@@ -58,16 +58,15 @@ int	main (void)
 			std::cout << e.what() << std::endl;
 		}
 	}
-	printTestHeader("Test 03. Out of Bounds");
+	printTestHeader("Test 03. Out of Bounds - High Grade");
 	{
 		try {
 
 			Bureaucrat b("George", 150);
 
-			for (int i = 0; i < 150; i++)
+			for (int i = 0; i < 149; i++)
 					b.incrementGrade();
-			b.incrementGrade(); // grade = 0;
-			std::cout << b.getGrade() << std::endl;
+			std::cout << b.getGrade() << std::endl; //grade = 1
 
 			//trying to increment again
 			b.incrementGrade();
@@ -78,6 +77,26 @@ int	main (void)
 			std::cout << e.what() << std::endl;
 		}
 	}
+	printTestHeader("Test 04. Out of Bounds - Low Grade");
+	{
+		try {
+
+			Bureaucrat b("George", 1);
+
+			for (int i = 0; i < 149; i++)
+					b.decrementGrade();
+			std::cout << b.getGrade() << std::endl; //grade = 1
+
+			//trying to increment again
+			b.decrementGrade();
+			std::cout << b.getGrade() << std::endl;
+
+		}
+		catch (std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
+
 	return 0;
 
 }

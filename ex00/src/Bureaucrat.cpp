@@ -81,7 +81,7 @@ void		Bureaucrat::GradeTooHighException() const {
 
 //grades control
 void	Bureaucrat::incrementGrade() {
-	if (_grade <= 0)
+	if (_grade <= 1)
 		GradeTooHighException();
 	else
 		--_grade;
