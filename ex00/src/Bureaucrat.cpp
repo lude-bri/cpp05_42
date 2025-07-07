@@ -82,14 +82,14 @@ void		Bureaucrat::GradeTooHighException() const {
 //grades control
 void	Bureaucrat::incrementGrade() {
 	if (_grade <= 0)
-		std::cout << "Ok! Enough is enough. No can't do" << std::endl;
+		GradeTooHighException();
 	else
 		--_grade;
 }
 
 void	Bureaucrat::decrementGrade() {
 	if (_grade >= 150)
-		std::cout << "Damn... You're fired! OUT!" << std::endl;
+		GradeTooLowException();
 	else
 		++_grade;
 }
