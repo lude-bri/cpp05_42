@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 12:08:08 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/07 13:25:30 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/07 13:31:33 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ public:
 	Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(const Bureaucrat &copy);
 	Bureaucrat &operator=(const Bureaucrat &copy);
-	void	operator<<(const Bureaucrat &copy) const;
+	void	operator<<(const Bureaucrat &copy);
 	~Bureaucrat();
 
 	//validation
@@ -58,6 +58,10 @@ public:
 	int			getGrade() const;
 
 	//exceptions
-	
-};
+	void			GradeTooHighException() const;
+	void			GradeTooLowException() const;
 
+	//grades control
+	void	plusGrade();
+	void	minusGrade();
+};
