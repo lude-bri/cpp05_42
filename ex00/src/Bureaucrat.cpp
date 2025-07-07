@@ -38,9 +38,9 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy) {
 }
 
 //Copy operator << assignment
-void Bureaucrat::operator<<(const Bureaucrat &copy) {
-	DEBUG_MSG("Bureaucrat's Operator Assignment << was called\n");
-	std::cout << _name << ", bureaucrat grade " << _grade << "." << std::endl;
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &b) {
+	out << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
+	return out;
 }
 
 //Destructor
@@ -59,12 +59,12 @@ int		Bureaucrat::isValid(int grade) const {
 
 //getters
 std::string	Bureaucrat::getName() const {
-	std::cout << "Bureaucrat name's is : " << _name << std::endl;
+	// std::cout << "Bureaucrat name's is : " << _name << std::endl;
 	return (_name);
 }
 
 int	Bureaucrat::getGrade() const { 
-	std::cout << "Bureaucrat grade's is : " << _grade << std::endl;
+	// std::cout << "Bureaucrat grade's is : " << _grade << std::endl;
 	return (_grade);
 }
 

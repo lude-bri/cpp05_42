@@ -46,7 +46,6 @@ public:
 	Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(const Bureaucrat &copy);
 	Bureaucrat &operator=(const Bureaucrat &copy);
-	void	operator<<(const Bureaucrat &copy);
 	~Bureaucrat();
 
 	//validation
@@ -65,3 +64,6 @@ public:
 	void	plusGrade();
 	void	minusGrade();
 };
+
+//overload
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &b);

@@ -25,10 +25,6 @@ int	main (void)
 		try
 		{
 			Bureaucrat b("bob", 150);
-
-			b.minusGrade();
-			b.getGrade();
-
 			std::cout << b << std::endl;
 		}
 		catch (std::exception &e)
