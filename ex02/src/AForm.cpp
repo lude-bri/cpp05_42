@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:25:32 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:41:57 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:46:31 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,13 @@ void	AForm::beSigned(Bureaucrat &b) {
 		<< " because grade is too low" << std::endl;
 }
 
+//Operator Overload
+std::ostream &operator<<(std::ostream &out, AForm &f) {
+	DEBUG_MSG("A AForm Operator Overload (<<) was called");
+
+	out << "This is the Form " << f.getName() << "'s attributes: " <<  std::endl;
+	out << "1. Form's State -> Signed: " << f.getFormState() << std::endl;
+	out << "2. Required Grade to Sign: " << f.getGradeToSign() << std::endl;
+	out << "3. Required Grade to Execute: " << f.getGradeToExecute() << std::endl;
+	return out;
+}

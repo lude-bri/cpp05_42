@@ -6,10 +6,13 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:43:56 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:44:13 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:44:44 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "../inc/AForm.hpp"
 
+int main(void) {
+
+}
 
