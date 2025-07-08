@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:25:32 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 11:21:38 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:27:37 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ void	AForm::FormNotSignedException() const {
 }
 
 //getters
-std::string			AForm::getName() {return _name;}
-bool				AForm::getFormState() {return _isSigned;}
-int					AForm::getGradeToSign() {return _gradeToSign;}
-int					AForm::getGradeToExecute() {return _gradeToExecute;}
+std::string			AForm::getName() const {return _name;}
+bool				AForm::getFormState() const {return _isSigned;}
+int					AForm::getGradeToSign() const {return _gradeToSign;}
+int					AForm::getGradeToExecute() const {return _gradeToExecute;}
 
 //Sign
 void	AForm::beSigned(Bureaucrat &b) {
@@ -73,10 +73,11 @@ void	AForm::beSigned(Bureaucrat &b) {
 }
 
 //Execute
-void	AForm::execute(Bureaucrat const &executor) {
+void	AForm::execute(Bureaucrat const &executor) const {
 	//must check if is signed and that the grade of Bureaucrat is ok to execute
 	//otherwise, throw Exception
 	DEBUG_MSG("A AForm execute method was called");
+
 	if (!_isSigned)
 		FormNotSignedException();
 	if (executor.getGrade() > _gradeToExecute)

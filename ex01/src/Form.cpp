@@ -72,12 +72,8 @@ void	Form::GradeTooHighException() const {
 
 //Sign
 void	Form::beSigned(Bureaucrat &b) {
-	if (b.getGrade() >= 75) {
-		std::cout << b.getName() << " signed " << _name << std::endl;
+	if (b.getGrade() <= _gradeToSign)
 		_isSigned = true;
-	}
 	else
-		std::cout << b.getName() << " couldn't sign " << _name
-		<< " because grade is too low" << std::endl;
+		GradeTooLowException();
 }
-

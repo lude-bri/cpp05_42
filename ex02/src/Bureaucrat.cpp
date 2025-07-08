@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:48:15 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:55:10 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:29:27 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,13 +97,24 @@ void	Bureaucrat::decrementGrade() {
 
 //Sign Form
 void	Bureaucrat::signForm(AForm &f) {
-	f.beSigned(*this);
+	try {
+		f.beSigned(*this);
+		std::cout << _name << " signed " << f.getName() << std::endl;
+	}
+	catch (std::exception const &e) {
+		std::cout << _name << " couldn't sign " << f.getName()
+			<< " because " << e.what() << std::endl;
+	}
 }
 
 //Execute Form
 void	Bureaucrat::executeForm(AForm const &form) const {
-
-	//it attempt to execute the form
-	//if success print -> <bureaucrat> executed <form>
-	//if error print an explicit error message
+	try {
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception const &e) {
+		std::cout << _name << " couldn't execute " << form.getName()
+			<< " because " << e.what() << std::endl;
+	}
 }

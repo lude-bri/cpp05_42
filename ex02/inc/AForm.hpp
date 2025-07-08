@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 18:48:17 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 11:13:11 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:27:09 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ public:
 	void			FormNotSignedException() const;
 
 	//getters
-	std::string		getName();
-	bool			getFormState();
-	int				getGradeToSign();
-	int				getGradeToExecute();
+	std::string		getName() const;
+	bool			getFormState() const;
+	int				getGradeToSign() const;
+	int				getGradeToExecute() const;
 
 	//Sign
 	void			beSigned(Bureaucrat &b);
 
 	//Execute
-	virtual void			execute(Bureaucrat const &executor) = 0;
-	virtual void			action() = 0; 
+	virtual void			execute(Bureaucrat const &executor) const = 0;
+	virtual void			action() const = 0; 
 };
 
 //operator overload
