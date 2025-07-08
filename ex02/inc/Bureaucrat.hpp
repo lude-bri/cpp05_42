@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 18:48:19 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:49:07 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:52:52 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,9 @@ public:
 
 	//Sign Form
 	void		signForm(AForm &f);
+
+	//Execute Form
+	void		executeForm(AForm const &form) const;
 };
 
 //overload

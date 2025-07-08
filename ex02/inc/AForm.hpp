@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 18:48:17 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/07 19:09:54 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:13:11 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 	//Exceptions
 	void			GradeTooLowException() const;
 	void			GradeTooHighException() const;
+	void			FormNotSignedException() const;
 
 	//getters
 	std::string		getName();
@@ -47,6 +48,7 @@ public:
 
 	//Execute
 	virtual void			execute(Bureaucrat const &executor) = 0;
+	virtual void			action() = 0; 
 };
 
 //operator overload

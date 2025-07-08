@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:25:32 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:46:31 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:21:38 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ void	AForm::GradeTooLowException() const {
 	throw std::runtime_error(_name + ": grade too low");
 }
 
+void	AForm::FormNotSignedException() const {
+	throw std::runtime_error(_name + ": form is not signed");
+}
+
 //getters
 std::string			AForm::getName() {return _name;}
 bool				AForm::getFormState() {return _isSigned;}
@@ -58,6 +62,7 @@ int					AForm::getGradeToExecute() {return _gradeToExecute;}
 
 //Sign
 void	AForm::beSigned(Bureaucrat &b) {
+	DEBUG_MSG("A AForm beSigned method was called");
 	if (b.getGrade() >= 75) {
 		std::cout << b.getName() << " signed " << _name << std::endl;
 		_isSigned = true;
@@ -65,6 +70,18 @@ void	AForm::beSigned(Bureaucrat &b) {
 	else
 		std::cout << b.getName() << " couldn't sign " << _name
 		<< " because grade is too low" << std::endl;
+}
+
+//Execute
+void	AForm::execute(Bureaucrat const &executor) {
+	//must check if is signed and that the grade of Bureaucrat is ok to execute
+	//otherwise, throw Exception
+	DEBUG_MSG("A AForm execute method was called");
+	if (!_isSigned)
+		FormNotSignedException();
+	if (executor.getGrade() > _gradeToExecute)
+		GradeTooLowException();
+	action();
 }
 
 //Operator Overload

@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:48:15 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:48:48 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:55:10 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,12 @@ void	Bureaucrat::decrementGrade() {
 //Sign Form
 void	Bureaucrat::signForm(AForm &f) {
 	f.beSigned(*this);
+}
+
+//Execute Form
+void	Bureaucrat::executeForm(AForm const &form) const {
+
+	//it attempt to execute the form
+	//if success print -> <bureaucrat> executed <form>
+	//if error print an explicit error message
 }
