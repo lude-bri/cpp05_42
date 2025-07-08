@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:25:32 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:31:25 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:34:16 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,18 @@ AForm::AForm(const AForm &copy) : _name(copy._name), _isSigned(copy._isSigned), 
 }
 
 //Assignment Operator
+AForm	&AForm::operator=(const AForm &copy) {
+	DEBUG_MSG("A Copy AFORM Assignment Operator was called");
+	if (this != &copy) {
+		_isSigned = copy._isSigned;
+	}
+	return *this;
+}
+
 //Destructor
+AForm::~AForm() {
+	DEBUG_MSG("A AFORM Destructor was called");
+}
 
 //Exceptions
 //getters
