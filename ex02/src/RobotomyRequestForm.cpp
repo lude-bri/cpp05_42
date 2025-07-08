@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../inc/RobotomyRequestForm.hpp"
+#include <stdlib.h>
 
 //Default Constructor
 RobotomyRequestForm::RobotomyRequestForm() : _isSigned(false), _gradeToSign(72), _gradeToExecute(45) {
@@ -51,6 +52,11 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 }
 
 void	RobotomyRequestForm::action() const {
-	//Makes some drilling noises, then informs that <target> has been robotomized
-	//succefully 50% of the time. Otherwise, it informs that the robotomy failed
+	std::cout << "Driiiiilllliiinnngggg......." << std::endl;
+	std::srand(time(NULL));
+	int result = rand()%100;
+	if (result % 2 == 0)
+		std::cout << _target << "'s robotomy was a success!" << std::endl;
+	else
+		std::cout << _target << "'s robotomy was a disaster! Jeez! Lord! Someone help me!" << std::endl;
 }
