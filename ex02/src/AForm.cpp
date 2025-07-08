@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:25:32 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:38:35 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:41:57 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,13 @@ int					AForm::getGradeToSign() {return _gradeToSign;}
 int					AForm::getGradeToExecute() {return _gradeToExecute;}
 
 //Sign
+void	AForm::beSigned(Bureaucrat &b) {
+	if (b.getGrade() >= 75) {
+		std::cout << b.getName() << " signed " << _name << std::endl;
+		_isSigned = true;
+	}
+	else
+		std::cout << b.getName() << " couldn't sign " << _name
+		<< " because grade is too low" << std::endl;
+}
 
