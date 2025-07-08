@@ -19,5 +19,20 @@ class RobotomyRequestForm : public AForm {
 	//
 	//Makes some drilling noises, then informs that <target> has been robotomized
 	//succefully 50% of the time. Otherwise, it informs that the robotomy failed
+private:
 
+	const std::string	_name;
+	bool				_isSigned;
+	const int			_gradeToSign = 72;
+	const int			_gradeToExecute = 45;
+
+public:
+	RobotomyRequestForm();
+	RobotomyRequestForm(std::string &target);
+	RobotomyRequestForm(const RobotomyRequestForm &copy);
+	RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
+	~RobotomyRequestForm();
+
+	//Execute
+	void		action() const;
 };
