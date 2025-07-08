@@ -6,9 +6,11 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 18:48:20 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/07 18:48:32 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:34:19 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once 
 
 #include "AForm.hpp"
 
@@ -22,13 +24,14 @@ class PresidentialPardonForm : public AForm {
 private:
 
 	const std::string	_name;
+	const std::string	_target;
 	bool				_isSigned;
 	const int			_gradeToSign = 25;
 	const int			_gradeToExecute = 5;
 
 public:
 	PresidentialPardonForm();
-	PresidentialPardonForm(std::string &target);
+	PresidentialPardonForm(const std::string &target);
 	PresidentialPardonForm(const PresidentialPardonForm &copy);
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &copy);
 	~PresidentialPardonForm();

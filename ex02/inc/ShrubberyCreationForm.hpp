@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm {
@@ -21,15 +23,15 @@ class ShrubberyCreationForm : public AForm {
 	//creates a file <target>_shrubbery in the working directory
 	//and writes ASCII trees inside it
 private:
-
 	const std::string	_name;
+	const std::string	_target;
 	bool				_isSigned;
 	const int			_gradeToSign = 145;
 	const int			_gradeToExecute = 137;
 
 public:
 	ShrubberyCreationForm();
-	ShrubberyCreationForm(std::string &target);
+	ShrubberyCreationForm(const std::string &target);
 	ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
 	~ShrubberyCreationForm();
