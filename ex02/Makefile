@@ -9,7 +9,7 @@ SHELL	:= bash
 #                                     NAMES                                    #
 #==============================================================================#
 
-NAME			= Presidential
+NAME			= ex02
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
@@ -28,7 +28,7 @@ TEMP_PATH		= .temp
 ### Files Source
 FILES = main.cpp
 FILES += Bureaucrat.cpp
-FILES += Form.cpp
+FILES += AForm.cpp
 FILES += ShrubberyCreationForm.cpp
 FILES += RobotomyRequestForm.cpp
 FILES += PresidentialPardonForm.cpp

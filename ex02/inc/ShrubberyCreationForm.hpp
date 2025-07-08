@@ -26,8 +26,8 @@ private:
 	const std::string	_name;
 	const std::string	_target;
 	bool				_isSigned;
-	const int			_gradeToSign = 145;
-	const int			_gradeToExecute = 137;
+	const int			_gradeToSign;
+	const int			_gradeToExecute;
 
 public:
 	ShrubberyCreationForm();
@@ -37,5 +37,6 @@ public:
 	~ShrubberyCreationForm();
 
 	//Execute
+	void	execute(Bureaucrat const &executor) const;
 	void	action() const;
 };

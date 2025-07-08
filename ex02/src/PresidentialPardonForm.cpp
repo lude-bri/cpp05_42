@@ -6,19 +6,20 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:29:38 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 15:40:00 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:05:51 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/PresidentialPardonForm.hpp"
 
 //Default Constructor
-PresidentialPardonForm::PresidentialPardonForm() : _isSigned(false) {
+PresidentialPardonForm::PresidentialPardonForm() : _isSigned(false), _gradeToSign(25), _gradeToExecute(5) {
 	DEBUG_MSG("A Default PresidentialPardonForm Constructor was called");
 }
 
 //Parametric Constructor
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : _target(target), _isSigned(false) {
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+	: _target(target), _isSigned(false), _gradeToSign(25), _gradeToExecute(5) {
 	DEBUG_MSG("A Parametric PresidentialPardonForm Constructor was called");
 }
 
@@ -45,3 +46,10 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 }
 
 //Execute
+void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
+	AForm::execute(executor);
+}
+
+void	PresidentialPardonForm::action() const {
+	//Informs that <target> has been pardoned by Zaphod Beeblebrox
+}

@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 18:48:20 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 15:34:19 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:23:07 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ private:
 	const std::string	_name;
 	const std::string	_target;
 	bool				_isSigned;
-	const int			_gradeToSign = 25;
-	const int			_gradeToExecute = 5;
+	const int			_gradeToSign;
+	const int			_gradeToExecute;
 
 public:
 	PresidentialPardonForm();
@@ -37,5 +37,6 @@ public:
 	~PresidentialPardonForm();
 
 	//Execute
+	void		execute(Bureaucrat const &executor) const;
 	void		action() const;
 };

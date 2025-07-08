@@ -6,19 +6,21 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:27:44 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 15:39:15 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:21:37 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ShrubberyCreationForm.hpp"
+#include <fstream>
 
 //Default Constructor
-ShrubberyCreationForm::ShrubberyCreationForm() : _isSigned(false) {
+ShrubberyCreationForm::ShrubberyCreationForm() : _isSigned(false), _gradeToSign(145), _gradeToExecute(137) {
 	DEBUG_MSG("A Default ShrubberyCreationForm Constructor was called");
 }
 
 //Parametric Constructor
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : _target(target), _isSigned(false) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) 
+	: _target(target), _isSigned(false), _gradeToSign(145), _gradeToExecute(137) {
 	DEBUG_MSG("A Parametric ShrubberyCreationForm Constructor was called");
 }
 
@@ -45,3 +47,23 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 //Execute
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+	AForm::execute(executor); // chama as verificações da base
+}
+
+void	ShrubberyCreationForm::action() const {
+	//creates a file <target>_shrubbery in the working directory and writes ASCII trees inside it
+	std::ofstream file((_target + "_shrubbery").c_str());
+
+	file << GREEN << "    		,@@@@@@@,		" << std::endl;
+    file << "  ,,,.   ,@@@@@@/@@,  .oo8888o. " << std::endl;
+    file << "  ,&%%&%&&%,@@@@@/@@@@@@,8888/88/8o " << std::endl;
+	file << " ,%&\"%&&%&&%,@@@\"@@@/@@@88ll88888/88' " << std::endl;
+	file << " %&&%&%&/%&&%@@\"@@/ /@@@88888\"88888' " << std::endl;
+	file << " %&&%/ %&%%&&@@\" V /@@' `88\"8 `/88' " << std::endl;
+	file << " `&%\" ` /%&'    |.|        \" '|8' " << std::endl; 
+	file << "     |o|        | |         | | " << std::endl;
+    file << "     |.|        | |         | | " << std::endl;
+	file << "  \\/ ._l/_/__/  ,l_//__\\/.  l_//_ " << RESET << std::endl;
+	file.close();
+}

@@ -6,19 +6,20 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:29:54 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 15:40:35 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:04:49 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/RobotomyRequestForm.hpp"
 
 //Default Constructor
-RobotomyRequestForm::RobotomyRequestForm() : _isSigned(false) {
+RobotomyRequestForm::RobotomyRequestForm() : _isSigned(false), _gradeToSign(72), _gradeToExecute(45) {
 	DEBUG_MSG("A Default RobotomyRequestForm Constructor was called");
 }
 
 //Parametric Constructor
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : _target(target), _isSigned(false) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) 
+	: _target(target), _isSigned(false), _gradeToSign(72), _gradeToExecute(45) {
 	DEBUG_MSG("A Parametric RobotomyRequestForm Constructor was called");
 }
 
@@ -45,7 +46,11 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
 //Execute
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+	AForm::execute(executor);
+}
 
-
-
-
+void	RobotomyRequestForm::action() const {
+	//Makes some drilling noises, then informs that <target> has been robotomized
+	//succefully 50% of the time. Otherwise, it informs that the robotomy failed
+}

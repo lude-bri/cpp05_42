@@ -11,8 +11,14 @@
 /* ************************************************************************** */
 
 #include "../inc/AForm.hpp"
+#include "../inc/ShrubberyCreationForm.hpp"
+#include "../inc/PresidentialPardonForm.hpp"
+#include "../inc/RobotomyRequestForm.hpp"
 
 int main(void) {
 
+	ShrubberyCreationForm shru("tree");
+
+	shru.action();
 }
 
