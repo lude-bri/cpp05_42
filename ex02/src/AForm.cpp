@@ -63,7 +63,7 @@ int					AForm::getGradeToExecute() const {return _gradeToExecute;}
 //Sign
 void	AForm::beSigned(Bureaucrat &b) {
 	DEBUG_MSG("A AForm beSigned method was called");
-	if (b.getGrade() >= 75) {
+	if (b.getGrade() <= _gradeToSign) {
 		std::cout << b.getName() << " signed " << _name << std::endl;
 		_isSigned = true;
 	}

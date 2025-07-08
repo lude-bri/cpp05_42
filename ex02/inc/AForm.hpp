@@ -30,7 +30,7 @@ public:
 	AForm(const std::string &name);
 	AForm(const AForm &copy);
 	AForm &operator=(const AForm &copy);
-	~AForm();
+	virtual ~AForm();
 
 	//Exceptions
 	void			GradeTooLowException() const;

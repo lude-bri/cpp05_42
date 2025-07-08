@@ -10,4 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
 
+class PresidentialPardonForm : public AForm {
+
+	//gradeToSign = 25
+	//gradeToExecute = 5
+	//
+	//Informs that <target> has been pardoned by Zaphod Beeblebrox
+};
