@@ -18,7 +18,7 @@ class AForm;
 
 //DEBUG
 #ifdef DEBUG
-# define DEBUG_MSG(x) std::cout << "[DEBUG]: " << x << std::endl
+# define DEBUG_MSG(x) std::cout << CYAN << "[DEBUG]: " << x << RESET << std::endl
 #else
 # define DEBUG_MSG(x)
 #endif

@@ -40,3 +40,7 @@ public:
 	void	execute(Bureaucrat const &executor) const;
 	void	action() const;
 };
+
+
+//operator overload
+std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm &f);

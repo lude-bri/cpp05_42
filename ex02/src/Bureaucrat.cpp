@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat() {
 
 //Constructor
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name) {
-	DEBUG_MSG("Bureaucrat's Constructor was called\n");
+	DEBUG_MSG("Bureaucrat's Constructor was called");
 	_grade = isValid(grade);
 
 	std::cout << "Bureaucrat " << _name << "'s grade is " << getGrade() << std::endl;
@@ -28,13 +28,13 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name) {
 
 //Copy Constructor
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) {
-	DEBUG_MSG("Bureaucrat's Copy Constructor was called\n");
+	DEBUG_MSG("Bureaucrat's Copy Constructor was called");
 	*this = copy;
 }
 
 //Copy operator = assignment
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy) {
-	DEBUG_MSG("Bureaucrat's Operator Assignment = was called\n");
+	DEBUG_MSG("Bureaucrat's Operator Assignment = was called");
 	return *this;
 }
 
@@ -46,7 +46,7 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &b) {
 
 //Destructor
 Bureaucrat::~Bureaucrat(){
-	DEBUG_MSG("Bureaucrat's Destructor was called\n");
+	DEBUG_MSG("Bureaucrat's Destructor was called");
 }
 
 //Validation of grade outbounds
