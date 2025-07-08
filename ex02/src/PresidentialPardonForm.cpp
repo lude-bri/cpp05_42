@@ -51,5 +51,5 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 }
 
 void	PresidentialPardonForm::action() const {
-	//Informs that <target> has been pardoned by Zaphod Beeblebrox
+	std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

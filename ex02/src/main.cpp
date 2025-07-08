@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:43:56 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 16:31:43 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:37:50 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,5 @@
 
 int main(void) {
 
-	RobotomyRequestForm robot("Eddie");
-
-	robot.action();
 }
 
