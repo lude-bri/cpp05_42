@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:25:32 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 10:34:16 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/08 10:38:35 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,19 @@ AForm::~AForm() {
 }
 
 //Exceptions
+void	AForm::GradeTooHighException() const {
+	throw std::runtime_error(_name + ": grade too high");
+}
+
+void	AForm::GradeTooLowException() const {
+	throw std::runtime_error(_name + ": grade too low");
+}
+
 //getters
+std::string			AForm::getName() {return _name;}
+bool				AForm::getFormState() {return _isSigned;}
+int					AForm::getGradeToSign() {return _gradeToSign;}
+int					AForm::getGradeToExecute() {return _gradeToExecute;}
+
 //Sign
 
