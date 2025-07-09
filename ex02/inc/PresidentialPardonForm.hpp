@@ -36,6 +36,12 @@ public:
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &copy);
 	~PresidentialPardonForm();
 
+	//getters
+	std::string		getName() const;
+	bool			getFormState() const;
+	int				getGradeToSign() const;
+	int				getGradeToExecute() const;
+	
 	//Execute
 	void		execute(Bureaucrat const &executor) const;
 	void		action() const;

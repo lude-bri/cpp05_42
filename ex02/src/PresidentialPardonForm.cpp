@@ -45,6 +45,13 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 	DEBUG_MSG("A Copy PresidentialPardonForm Constructor was called");
 }
 
+
+//getters
+std::string			PresidentialPardonForm::getName() const {return _name;}
+bool				PresidentialPardonForm::getFormState() const {return _isSigned;}
+int					PresidentialPardonForm::getGradeToSign() const {return _gradeToSign;}
+int					PresidentialPardonForm::getGradeToExecute() const {return _gradeToExecute;}
+
 //Execute
 void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 	AForm::execute(executor);

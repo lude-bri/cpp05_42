@@ -46,6 +46,12 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 	DEBUG_MSG("A Copy ShrubberyCreationForm Constructor was called");
 }
 
+//getters
+std::string			ShrubberyCreationForm::getName() const {return _name;}
+bool				ShrubberyCreationForm::getFormState() const {return _isSigned;}
+int					ShrubberyCreationForm::getGradeToSign() const {return _gradeToSign;}
+int					ShrubberyCreationForm::getGradeToExecute() const {return _gradeToExecute;}
+
 //Execute
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	AForm::execute(executor); // chama as verificações da base

@@ -46,6 +46,12 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	DEBUG_MSG("A Copy RobotomyRequestForm Constructor was called");
 }
 
+//getters
+std::string			RobotomyRequestForm::getName() const {return _name;}
+bool				RobotomyRequestForm::getFormState() const {return _isSigned;}
+int					RobotomyRequestForm::getGradeToSign() const {return _gradeToSign;}
+int					RobotomyRequestForm::getGradeToExecute() const {return _gradeToExecute;}
+
 //Execute
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 	AForm::execute(executor);
