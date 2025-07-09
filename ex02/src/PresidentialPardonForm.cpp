@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:29:38 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 17:06:47 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/09 18:15:40 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 
 //Copy Assignment Operator
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &copy) {
-	DEBUG_MSG("A Copy PresidentialPardonForm Constructor was called");
+	DEBUG_MSG("A Copy PresidentialPardonForm Assignment Operator was called");
 	if (this != &copy) {
 		_isSigned = copy._isSigned;
 	}
@@ -42,7 +42,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 //Destructor
 PresidentialPardonForm::~PresidentialPardonForm() {
-	DEBUG_MSG("A Copy PresidentialPardonForm Constructor was called");
+	DEBUG_MSG("A PresidentialPardonForm Destructor was called");
 }
 
 //getters

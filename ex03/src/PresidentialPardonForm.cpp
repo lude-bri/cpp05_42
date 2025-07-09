@@ -33,7 +33,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 
 //Copy Assignment Operator
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &copy) {
-	DEBUG_MSG("A Copy PresidentialPardonForm Constructor was called");
+	DEBUG_MSG("A Copy PresidentialPardonForm Assignment Operator was called");
 	if (this != &copy) {
 		_isSigned = copy._isSigned;
 	}
@@ -42,7 +42,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 //Destructor
 PresidentialPardonForm::~PresidentialPardonForm() {
-	DEBUG_MSG("A Copy PresidentialPardonForm Constructor was called");
+	DEBUG_MSG("A PresidentialPardonForm Destructor was called");
 }
 
 //getters

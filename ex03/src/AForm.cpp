@@ -42,17 +42,9 @@ AForm::~AForm() {
 }
 
 //Exceptions
-void	AForm::GradeTooHighException() const {
-	throw std::runtime_error(_name + ": grade too high");
-}
-
-void	AForm::GradeTooLowException() const {
-	throw std::runtime_error(_name + ": grade too low");
-}
-
-void	AForm::FormNotSignedException() const {
-	throw std::runtime_error(_name + ": form is not signed");
-}
+void	AForm::GradeTooHighException() const { throw std::runtime_error(_name + ": grade too high");}
+void	AForm::GradeTooLowException() const { throw std::runtime_error(_name + ": grade too low"); }
+void	AForm::FormNotSignedException() const { throw std::runtime_error(_name + ": form is not signed");}
 
 //getters
 std::string			AForm::getName() const {return _name;}
