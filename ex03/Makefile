@@ -9,7 +9,7 @@ SHELL	:= bash
 #                                     NAMES                                    #
 #==============================================================================#
 
-NAME			= ex02
+NAME			= Intern
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
@@ -32,6 +32,7 @@ FILES += AForm.cpp
 FILES += ShrubberyCreationForm.cpp
 FILES += RobotomyRequestForm.cpp
 FILES += PresidentialPardonForm.cpp
+FILES += Intern.cpp
 
 ### Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
