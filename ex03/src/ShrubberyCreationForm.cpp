@@ -70,7 +70,10 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 }
 
 void	ShrubberyCreationForm::action() const {
-	//creates a file <target>_shrubbery in the working directory and writes ASCII trees inside it
+	
+	if (_target.empty())
+		std::cerr << "Error: There is no valid target" << std::endl;
+
 	std::ofstream file((_target + "_shrubbery").c_str());
 
 	file << GREEN << "    		,@@@@@@@,		" << std::endl;
@@ -85,6 +88,7 @@ void	ShrubberyCreationForm::action() const {
 	file << "  \\/ ._l/_/__/  ,l_//__\\/.  l_//_ " << RESET << std::endl;
 	file.close();
 }
+
 
 //Operator Overload
 std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm &f) {

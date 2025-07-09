@@ -70,6 +70,8 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 }
 
 void	RobotomyRequestForm::action() const {
+	if (_target.empty())
+		std::cerr << "Error: There is no valid target" << std::endl;
 	std::cout << "Driiiiilllliiinnngggg......." << std::endl;
 	std::srand(time(NULL));
 	int result = rand()%100;

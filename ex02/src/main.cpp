@@ -59,7 +59,7 @@ int main(void) {
 		Bureaucrat Helly("Helly", 55);
 
 		RobotomyRequestForm form("TopSecret");
-		
+
 		//show form
 		std::cout << form << std::endl;
 

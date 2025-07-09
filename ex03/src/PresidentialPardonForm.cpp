@@ -69,6 +69,8 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 }
 
 void	PresidentialPardonForm::action() const {
+	if (_target.empty())
+		std::cerr << "Error: There is no valid target" << std::endl;
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
