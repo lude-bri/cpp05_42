@@ -41,10 +41,13 @@ public:
 	bool			getFormState() const;
 	int				getGradeToSign() const;
 	int				getGradeToExecute() const;
-	
+
+	//Sign
+	void			beSigned(Bureaucrat &b);
+
 	//Execute
-	void	execute(Bureaucrat const &executor) const;
-	void	action() const;
+	void			execute(Bureaucrat const &executor) const;
+	void			action() const;
 };
 
 

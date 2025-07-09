@@ -42,9 +42,12 @@ public:
 	int				getGradeToSign() const;
 	int				getGradeToExecute() const;
 	
+	//Sign
+	void			beSigned(Bureaucrat &b);
+
 	//Execute
-	void		execute(Bureaucrat const &executor) const;
-	void		action() const;
+	void			execute(Bureaucrat const &executor) const;
+	void			action() const;
 };
 
 //operator overload

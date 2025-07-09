@@ -52,6 +52,14 @@ bool				RobotomyRequestForm::getFormState() const {return _isSigned;}
 int					RobotomyRequestForm::getGradeToSign() const {return _gradeToSign;}
 int					RobotomyRequestForm::getGradeToExecute() const {return _gradeToExecute;}
 
+//Sign
+void	RobotomyRequestForm::beSigned(Bureaucrat &b) {
+	if (b.getGrade() <= _gradeToSign)
+		_isSigned = true;
+	else
+		GradeTooLowException();
+}
+
 //Execute
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 	AForm::execute(executor);

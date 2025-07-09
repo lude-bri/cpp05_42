@@ -52,6 +52,14 @@ bool				ShrubberyCreationForm::getFormState() const {return _isSigned;}
 int					ShrubberyCreationForm::getGradeToSign() const {return _gradeToSign;}
 int					ShrubberyCreationForm::getGradeToExecute() const {return _gradeToExecute;}
 
+//Sign
+void	ShrubberyCreationForm::beSigned(Bureaucrat &b) {
+	if (b.getGrade() <= _gradeToSign)
+		_isSigned = true;
+	else
+		GradeTooLowException();
+}
+
 //Execute
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	AForm::execute(executor); // chama as verificações da base

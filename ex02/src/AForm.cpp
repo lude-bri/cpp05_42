@@ -61,15 +61,23 @@ int					AForm::getGradeToSign() const {return _gradeToSign;}
 int					AForm::getGradeToExecute() const {return _gradeToExecute;}
 
 //Sign
+// void	AForm::beSigned(Bureaucrat &b) {
+// 	DEBUG_MSG("A AForm beSigned method was called");
+// 	if (b.getGrade() <= _gradeToSign) {
+// 		std::cout << b.getName() << " signed " << _name << std::endl;
+// 		_isSigned = true;
+// 	}
+// 	else
+// 		std::cout << b.getName() << " couldn't sign " << _name
+// 		<< " because grade is too low" << std::endl;
+// }
+
+//Sign
 void	AForm::beSigned(Bureaucrat &b) {
-	DEBUG_MSG("A AForm beSigned method was called");
-	if (b.getGrade() <= _gradeToSign) {
-		std::cout << b.getName() << " signed " << _name << std::endl;
+	if (b.getGrade() <= _gradeToSign)
 		_isSigned = true;
-	}
 	else
-		std::cout << b.getName() << " couldn't sign " << _name
-		<< " because grade is too low" << std::endl;
+		GradeTooLowException();
 }
 
 //Execute

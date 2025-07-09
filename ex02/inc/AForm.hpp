@@ -44,11 +44,11 @@ public:
 	int				getGradeToExecute() const;
 
 	//Sign
-	void			beSigned(Bureaucrat &b);
+	virtual void			beSigned(Bureaucrat &b);
 
 	//Execute
-	virtual void			execute(Bureaucrat const &executor) const = 0;
-	virtual void			action() const = 0; 
+	virtual void	execute(Bureaucrat const &executor) const = 0;
+	virtual void	action() const = 0; 
 };
 
 //operator overload
