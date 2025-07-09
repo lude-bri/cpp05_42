@@ -124,15 +124,6 @@ clean: 				## Remove object files
 		echo " $(RED)$(D) [$(GRN)Nothing to clean!$(D)]"; \
 	fi
 
-# fclean: clean			## Remove executable and .gdbinit
-# 	@if [ -f "$(NAME)" ]; then \
-# 		if [ -f "$(NAME)" ]; then \
-# 			$(RM) $(NAME); \
-# 			echo "* $(YEL)Removing $(CYA)$(NAME)$(D) file: $(_SUCCESS)"; \
-# 		fi; \
-# 	else \
-# 		echo " $(RED)$(D) [$(GRN)Nothing to be fcleaned!$(D)]"; \
-# 	fi
 
 fclean: clean			## Remove executable and .gdbinit
 	@if [ -f "$(NAME)" ]; then \
