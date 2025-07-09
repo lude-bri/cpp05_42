@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:29:54 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/08 17:09:19 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:55:33 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
 
 //Copy Assignment Operator
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &copy) {
-	DEBUG_MSG("A Copy RobotomyRequestForm Constructor was called");
+	DEBUG_MSG("A Copy RobotomyRequestForm Assignment Operator was called");
 	if (this != &copy) {
 		_isSigned = copy._isSigned;
 	}
@@ -43,7 +43,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 
 //Destructor
 RobotomyRequestForm::~RobotomyRequestForm() {
-	DEBUG_MSG("A Copy RobotomyRequestForm Constructor was called");
+	DEBUG_MSG("A RobotomyRequestForm Destructor was called");
 }
 
 //getters

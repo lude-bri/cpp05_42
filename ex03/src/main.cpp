@@ -11,11 +11,7 @@
 /* ************************************************************************** */
 
 #include "../inc/AForm.hpp"
-#include "../inc/ShrubberyCreationForm.hpp"
-#include "../inc/PresidentialPardonForm.hpp"
-#include "../inc/RobotomyRequestForm.hpp"
 #include "../inc/Intern.hpp"
-#include <fstream>
 
 void	printTestHeader(const std::string &testName) {
 	std::cout << "\n";
@@ -31,6 +27,67 @@ int main(void) {
 		AForm *rrf;
 
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		delete rrf;
 	}
-}
+	printTestHeader("Test 01. All form types");
+    {
+        Intern		intern;
+        Bureaucrat	boss("Boss", 1);
 
+        AForm* forms[3];
+	
+        forms[0] = intern.makeForm("shrubbery creation", "home");
+        forms[1] = intern.makeForm("robotomy request", "Bender");
+        forms[2] = intern.makeForm("presidential pardon", "Alice");
+
+        for (int i = 0; i < 3; i++) {
+            if (forms[i]) {
+                boss.signForm(*forms[i]);
+                boss.executeForm(*forms[i]);
+                delete forms[i];
+            }
+        }
+    }
+    printTestHeader("Test 02. Invalid forms");
+    {
+        Intern intern;
+        AForm* invalid;
+
+        const std::string testCases[6] = {
+            "",
+            "unknown",
+            "creation",
+            "SHrubbery CREATION",
+            "robotomy",
+            "presidential"
+        };
+
+        for (size_t i = 0; i < 6; i++) {
+            invalid = intern.makeForm(testCases[i], "target");
+            if (invalid) {
+                std::cout << "ERROR: Should not have created " << testCases[i] << std::endl;
+                delete invalid;
+            }
+        }
+    }
+	printTestHeader("Test 03. Copy Intern");
+    {
+        Intern original;
+       
+		//test copy constructor
+		Intern copy(original); 
+        
+		//test assignment operator
+		Intern assigned;
+        assigned = original;
+
+        AForm* form1 = original.makeForm("shrubbery creation", "original");
+        AForm* form2 = copy.makeForm("robotomy request", "copy");
+        AForm* form3 = assigned.makeForm("presidential pardon", "assigned");
+
+        if (form1) delete form1;
+        if (form2) delete form2;
+        if (form3) delete form3;
+    }
+    return 0;
+}

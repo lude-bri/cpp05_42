@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:25:38 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/09 17:32:04 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:47:27 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ AForm* Intern::buildPresidential(const std::string& target) const { return new P
 
 //the only ability
 AForm	*Intern::makeForm(const std::string &form, const std::string &target) {
-	//recognizes the string and match to the type of Form, creates it and applies the target as argument
 
 	DEBUG_MSG("An Intern makeForm Method was called");
 
