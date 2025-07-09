@@ -62,6 +62,10 @@ void	RobotomyRequestForm::beSigned(Bureaucrat &b) {
 
 //Execute
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+	if (!_isSigned)
+		FormNotSignedException();
+	if (executor.getGrade() > _gradeToExecute)
+		GradeTooLowException();
 	AForm::execute(executor);
 }
 

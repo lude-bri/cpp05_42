@@ -61,7 +61,11 @@ void	ShrubberyCreationForm::beSigned(Bureaucrat &b) {
 }
 
 //Execute
-void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {	
+	if (!_isSigned)
+		FormNotSignedException();
+	if (executor.getGrade() > _gradeToExecute)
+		GradeTooLowException();
 	AForm::execute(executor); // chama as verificações da base
 }
 

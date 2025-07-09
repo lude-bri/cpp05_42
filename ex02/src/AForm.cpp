@@ -82,14 +82,7 @@ void	AForm::beSigned(Bureaucrat &b) {
 
 //Execute
 void	AForm::execute(Bureaucrat const &executor) const {
-	//must check if is signed and that the grade of Bureaucrat is ok to execute
-	//otherwise, throw Exception
 	DEBUG_MSG("A AForm execute method was called");
-
-	if (!_isSigned)
-		FormNotSignedException();
-	if (executor.getGrade() > _gradeToExecute)
-		GradeTooLowException();
 	action();
 }
 
