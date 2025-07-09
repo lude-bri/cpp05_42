@@ -66,7 +66,7 @@ int	main (void)
 
 			for (int i = 0; i < 149; i++)
 					b.incrementGrade();
-			std::cout << b.getGrade() << std::endl; //grade = 1
+			std::cout << "Bureaucrat " << b.getName() << "'s new grade is : " << b.getGrade() << std::endl; //grade = 1
 
 			//trying to increment again
 			b.incrementGrade();
@@ -81,11 +81,11 @@ int	main (void)
 	{
 		try {
 
-			Bureaucrat b("George", 1);
+			Bureaucrat b("George Martin", 1);
 
 			for (int i = 0; i < 149; i++)
 					b.decrementGrade();
-			std::cout << b.getGrade() << std::endl; //grade = 1
+			std::cout << "Bureaucrat " << b.getName() << "'s new grade is : " << b.getGrade() << std::endl; //grade = 1
 
 			//trying to increment again
 			b.decrementGrade();
