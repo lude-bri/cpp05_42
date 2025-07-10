@@ -55,17 +55,11 @@ AForm	*Intern::makeForm(const std::string &form, const std::string &target) {
 
 	DEBUG_MSG("An Intern makeForm Method was called");
 
-	try {
-		for (int i = 0; i < 3; i++) {
-			if (form == formNames[i]) {
-				std::cout << "Intern creates " << form << std::endl;
-				return ((this->*functions[i])(target));
-			}
+	for (int i = 0; i < 3; i++) {
+		if (form == formNames[i]) {
+			std::cout << "Intern creates " << form << std::endl;
+			return ((this->*functions[i])(target));
 		}
-	}
-	catch (std::exception const &e) {
-		std::cerr << "Error: " << e.what() << std::endl;
-		return NULL;
 	}
 	std::cerr << "Error: Unkown name" << std::endl;
 	return NULL;

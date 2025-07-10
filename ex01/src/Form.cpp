@@ -46,14 +46,18 @@ Form::~Form() {
 
 //Operator Overload
 std::ostream &operator<<(std::ostream &out, Form &f) {
-	DEBUG_MSG("A Form Operator Overload (<<) was called");
-
+	DEBUG_MSG("A AForm Operator Overload (<<) was called");
+	
+	out << std::endl;
+	out << " -----------------FORM-------------------------- " << std::endl;
 	out << "This is the Form " << f.getName() << "'s attributes: " <<  std::endl;
 	out << "1. Form's State -> Signed: " << f.getFormState() << std::endl;
 	out << "2. Required Grade to Sign: " << f.getGradeToSign() << std::endl;
 	out << "3. Required Grade to Execute: " << f.getGradeToExecute() << std::endl;
+	out << " --------------------------------------------- " << std::endl;
 	return out;
 }
+
 
 //Getters
 std::string		Form::getName() { return _name; }
